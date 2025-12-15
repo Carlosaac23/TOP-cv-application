@@ -1,21 +1,14 @@
-import SingleLineEdit from '@/SingleLineEdit';
-import { useState } from 'react';
+import Contact from './Contact';
+import Name from './Name';
 
 export default function Form() {
-  const [name, setName] = useState('Carlos Acosta');
-  const [profession, setProfession] = useState('Software Engineering');
-
   return (
-    <main>
-      <div>
-        <SingleLineEdit value={name} setValue={setName} style='big' />
+    <main className='m-2 grid grid-cols-2 border-t-2 p-2'>
+      <div className='col-span-2 border-b'>
+        <Name />
       </div>
-      <div>
-        <SingleLineEdit
-          value={profession}
-          setValue={setProfession}
-          style='small'
-        />
+      <div className='col-span-2 border-b'>
+        <Contact />
       </div>
     </main>
   );
