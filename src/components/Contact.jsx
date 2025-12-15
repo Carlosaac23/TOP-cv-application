@@ -34,9 +34,9 @@ export default function Contact() {
   return (
     <div>
       <h2 className='mb-3 text-center font-bold uppercase'>Contact</h2>
-      {contactMethods.map(({ icon, value, setValue }) => {
+      {contactMethods.map(({ icon, value, setValue }, index) => {
         return (
-          <div className='flex items-center gap-3'>
+          <div key={index} className='flex items-center gap-3'>
             {icon}
             <SingleLineEdit
               className={'text-sm'}
