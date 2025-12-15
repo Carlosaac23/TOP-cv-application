@@ -8,41 +8,44 @@ export default function Contact() {
   const [address, setAddress] = useState('123 Anywhere St., Any City');
   const [website, setWebsite] = useState('www.johndoewebsite.com');
 
+  const contactMethods = [
+    {
+      icon: <Phone size={16} color='#404040' />,
+      value: telephone,
+      setValue: setTelephone,
+    },
+    {
+      icon: <Mail size={16} color='#404040' />,
+      value: email,
+      setValue: setEmail,
+    },
+    {
+      icon: <MapPin size={16} color='#404040' />,
+      value: address,
+      setValue: setAddress,
+    },
+    {
+      icon: <Earth size={16} color='#404040' />,
+      value: website,
+      setValue: setWebsite,
+    },
+  ];
+
   return (
     <div>
       <h2 className='mb-3 text-center font-bold uppercase'>Contact</h2>
-      <div className='flex items-center gap-3'>
-        <Phone size={16} color='#404040' />
-        <SingleLineEdit
-          className={'text-sm'}
-          value={telephone}
-          setValue={setTelephone}
-        />
-      </div>
-      <div className='flex items-center gap-3'>
-        <Mail size={16} color='#404040' />
-        <SingleLineEdit
-          className={'text-sm'}
-          value={email}
-          setValue={setEmail}
-        />
-      </div>
-      <div className='flex items-center gap-3'>
-        <MapPin size={16} color='#404040' />
-        <SingleLineEdit
-          className={'text-sm'}
-          value={address}
-          setValue={setAddress}
-        />
-      </div>
-      <div className='flex items-center gap-3'>
-        <Earth size={16} color='#404040' />
-        <SingleLineEdit
-          className={'text-sm'}
-          value={website}
-          setValue={setWebsite}
-        />
-      </div>
+      {contactMethods.map(({ icon, value, setValue }) => {
+        return (
+          <div className='flex items-center gap-3'>
+            {icon}
+            <SingleLineEdit
+              className={'text-sm'}
+              value={value}
+              setValue={setValue}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
