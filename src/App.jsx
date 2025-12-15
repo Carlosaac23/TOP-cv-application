@@ -1,3 +1,13 @@
+import Footer from '@/Footer';
+import Header from '@/Header';
+import Main from '@/Main';
+
 export default function App() {
-  return <h1 className='text-red-500'>Hola, Mundo!</h1>;
+  return (
+    <div className='flex min-h-screen flex-col'>
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
 }
