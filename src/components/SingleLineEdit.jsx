@@ -13,7 +13,7 @@ export default function SingleLineEdit({ value, className }) {
       aria-label='Field name'
       value={editingValue}
       onChange={onChange}
-      className={`${className} w-full hover:cursor-pointer hover:bg-neutral-100 focus:outline-none`}
+      className={`${className} w-full hover:cursor-pointer hover:bg-neutral-200 focus:outline-none`}
     />
   );
 }

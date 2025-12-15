@@ -11,21 +11,37 @@ export default function Contact() {
   return (
     <div>
       <h2 className='mb-3 text-center font-bold uppercase'>Contact</h2>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-3'>
         <Phone size={16} color='#404040' />
-        <SingleLineEdit value={telephone} setValue={setTelephone} />
+        <SingleLineEdit
+          className={'text-sm'}
+          value={telephone}
+          setValue={setTelephone}
+        />
       </div>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-3'>
         <Mail size={16} color='#404040' />
-        <SingleLineEdit value={email} setValue={setEmail} />
+        <SingleLineEdit
+          className={'text-sm'}
+          value={email}
+          setValue={setEmail}
+        />
       </div>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-3'>
         <MapPin size={16} color='#404040' />
-        <SingleLineEdit value={address} setValue={setAddress} />
+        <SingleLineEdit
+          className={'text-sm'}
+          value={address}
+          setValue={setAddress}
+        />
       </div>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-3'>
         <Earth size={16} color='#404040' />
-        <SingleLineEdit value={website} setValue={setWebsite} />
+        <SingleLineEdit
+          className={'text-sm'}
+          value={website}
+          setValue={setWebsite}
+        />
       </div>
     </div>
   );

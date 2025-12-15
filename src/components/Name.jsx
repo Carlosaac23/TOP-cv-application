@@ -9,7 +9,7 @@ export default function Name() {
     <>
       <div>
         <SingleLineEdit
-          className={'p-4 text-center text-2xl tracking-widest uppercase'}
+          className={'text-center text-2xl tracking-widest uppercase'}
           value={name}
           setValue={setName}
           style='big'
@@ -17,7 +17,7 @@ export default function Name() {
       </div>
       <div>
         <SingleLineEdit
-          className={'p-1 text-center text-sm tracking-wide uppercase'}
+          className={'text-center text-sm tracking-wide uppercase'}
           value={profession}
           setValue={setProfession}
           style='small'
