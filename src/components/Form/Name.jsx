@@ -20,7 +20,7 @@ export default function Name() {
           name='Profession'
           value={profession}
           setValue={setProfession}
-          className={'text-center text-sm tracking-wide uppercase'}
+          className={'w-full text-center text-sm tracking-wide uppercase'}
         />
       </div>
     </>
