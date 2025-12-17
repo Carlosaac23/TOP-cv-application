@@ -12,7 +12,7 @@ export default function Name() {
           name='Name'
           value={name}
           setValue={setName}
-          className={'text-center text-2xl tracking-widest uppercase'}
+          className={'w-full text-center text-2xl tracking-widest uppercase'}
         />
       </div>
       <div>
