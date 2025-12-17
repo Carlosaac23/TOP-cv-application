@@ -13,9 +13,10 @@ export default function Summary() {
         Profile Summary
       </h2>
       <MultiLineEdit
+        name='Summary'
         value={summary}
         setValue={setSummary}
-        className={'max-h-32 overflow-y-auto text-sm'}
+        className={'w-full resize-none text-sm'}
       />
     </div>
   );
