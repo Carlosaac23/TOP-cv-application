@@ -1,6 +1,6 @@
-import Footer from '@/Footer';
-import Form from '@/Form';
-import Header from '@/Header';
+import Header from '@/components//Header';
+import Footer from '@/components/Footer';
+import Form from '@/components/Form/Form';
 
 export default function App() {
   return (
