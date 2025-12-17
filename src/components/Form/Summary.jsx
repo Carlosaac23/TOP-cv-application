@@ -16,7 +16,7 @@ export default function Summary() {
         name='Summary'
         value={summary}
         setValue={setSummary}
-        className={'w-full resize-none text-sm'}
+        className={'max-h-40 w-full resize-none text-sm'}
       />
     </div>
   );
