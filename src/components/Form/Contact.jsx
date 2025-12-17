@@ -10,21 +10,25 @@ export default function Contact() {
 
   const contactMethods = [
     {
+      name: 'Contact Phone',
       icon: <Phone size={16} color='#404040' />,
       value: telephone,
       setValue: setTelephone,
     },
     {
+      name: 'Email',
       icon: <Mail size={16} color='#404040' />,
       value: email,
       setValue: setEmail,
     },
     {
+      name: 'Location',
       icon: <MapPin size={16} color='#404040' />,
       value: address,
       setValue: setAddress,
     },
     {
+      name: 'Website',
       icon: <Earth size={16} color='#404040' />,
       value: website,
       setValue: setWebsite,
@@ -36,7 +40,7 @@ export default function Contact() {
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Contact
       </h2>
-      {contactMethods.map(({ icon, value, setValue }, index) => {
+      {contactMethods.map(({ name, icon, value, setValue }, index) => {
         return (
           <div key={index} className='flex items-center gap-3'>
             {icon}
@@ -44,6 +48,7 @@ export default function Contact() {
               className={'text-sm'}
               value={value}
               setValue={setValue}
+              name={name}
             />
           </div>
         );
