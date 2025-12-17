@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-export default function MultiLineEdit({ name, value, className }) {
+export default function MultiLineEdit(props) {
+  const { name, value, setValue, className } = props;
   const [editingValue, setEditingValue] = useState(value);
+  console.log('editingValue:', editingValue);
   const minLength = 40;
 
-  function onChange(e) {
+  function handleChange(e) {
     setEditingValue(e.target.value);
   }
 
@@ -22,6 +24,7 @@ export default function MultiLineEdit({ name, value, className }) {
 
     if (value !== editingValue) {
       toast.success(`${name} successfully saved!`);
+      setValue(editingValue);
       return;
     }
   }
@@ -30,7 +33,7 @@ export default function MultiLineEdit({ name, value, className }) {
     <textarea
       name={name}
       value={editingValue}
-      onChange={onChange}
+      onChange={handleChange}
       onBlur={handleBlur}
       className={`${className} hover:cursor-pointer hover:bg-neutral-200 focus:outline-none`}
       rows={7}
