@@ -32,8 +32,10 @@ export default function Contact() {
   ];
 
   return (
-    <div>
-      <h2 className='mb-3 text-center font-bold uppercase'>Contact</h2>
+    <div className='flex flex-col gap-1 p-2'>
+      <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
+        Contact
+      </h2>
       {contactMethods.map(({ icon, value, setValue }, index) => {
         return (
           <div key={index} className='flex items-center gap-3'>
