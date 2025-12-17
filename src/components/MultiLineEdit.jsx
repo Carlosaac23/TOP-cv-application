@@ -4,7 +4,6 @@ import { toast } from 'sonner';
 export default function MultiLineEdit(props) {
   const { name, value, setValue, className } = props;
   const [editingValue, setEditingValue] = useState(value);
-  console.log('editingValue:', editingValue);
   const minLength = 40;
 
   function handleChange(e) {
