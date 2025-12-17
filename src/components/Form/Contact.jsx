@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SingleLineEdit from '../SingleLineEdit';
 
 export default function Contact() {
-  const [telephone, setTelephone] = useState('+57-300-184-1584');
+  const [telephone, setTelephone] = useState('+57 300-184-1584');
   const [email, setEmail] = useState('johndoe@gmail.com');
   const [address, setAddress] = useState('123 Anywhere St., Any City');
   const [website, setWebsite] = useState('www.johndoewebsite.com');
@@ -40,15 +40,17 @@ export default function Contact() {
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Contact
       </h2>
-      {contactMethods.map(({ name, icon, value, setValue }, index) => {
+      {contactMethods.map((props, index) => {
+        const { name, icon, value, setValue } = props;
+
         return (
           <div key={index} className='flex items-center gap-3'>
             {icon}
             <SingleLineEdit
-              className={'text-sm'}
+              name={name}
               value={value}
               setValue={setValue}
-              name={name}
+              className={'text-sm'}
             />
           </div>
         );
