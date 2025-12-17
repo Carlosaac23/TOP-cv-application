@@ -10,19 +10,17 @@ export default function Name() {
       <div>
         <SingleLineEdit
           name='Name'
-          className={'text-center text-2xl tracking-widest uppercase'}
           value={name}
           setValue={setName}
-          style='big'
+          className={'text-center text-2xl tracking-widest uppercase'}
         />
       </div>
       <div>
         <SingleLineEdit
           name='Profession'
-          className={'text-center text-sm tracking-wide uppercase'}
           value={profession}
           setValue={setProfession}
-          style='small'
+          className={'text-center text-sm tracking-wide uppercase'}
         />
       </div>
     </>
