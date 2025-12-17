@@ -22,6 +22,16 @@ export default function Experience() {
         'Oversaw the creation of engaging content for various platforms, collaborating with internal teams and external agencies to ensure brand consistency and relevance.',
       ],
     },
+    {
+      company: 'Studio Shodwe',
+      years: '2024 - 2025',
+      position: 'Marketing Manager & Specialist',
+      duties: [
+        'Developed and executed targeted marketing campaigns, resulting in a 25% increase in lead generation.',
+        'Implemented SEO strategies that improved website traffic by 30%, enhancing online visibility and positioning the company.',
+        'Collaborated with sales teams to create effective sales collateral, presentations, and promotional materials.',
+      ],
+    },
   ]);
 
   return (
