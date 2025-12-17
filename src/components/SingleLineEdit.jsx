@@ -8,12 +8,13 @@ export default function SingleLineEdit({ value, className }) {
   }
 
   return (
-    <input
-      type='text'
-      aria-label='Field name'
+    <div
+      contentEditable={true}
+      suppressContentEditableWarning={true}
+      dangerouslySetInnerHTML={{ __html: editingValue }}
       value={editingValue}
       onChange={onChange}
       className={`${className} w-full hover:cursor-pointer hover:bg-neutral-200 focus:outline-none`}
-    />
+    ></div>
   );
 }
