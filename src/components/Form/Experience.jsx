@@ -1,9 +1,76 @@
+import { useState } from 'react';
+import MultiLineEdit from '../MultiLineEdit';
+import SingleLineEdit from '../SingleLineEdit';
+
 export default function Experience() {
+  const [jobs, setJobs] = useState([
+    {
+      company: 'Borcelle Studio',
+      years: '2030 - Present',
+      position: 'Marketing Maganer & Specialist',
+      duties: [
+        'Led the development and implementation of comprehensive marketing strategies that resulted in a 20% increase in brand visibility and a 15% growth in sales within the first year.',
+        'Successfully launched and managed multiple cross-channel campaigns, including digital marketing, social media, and traditional advertising, resulting in improved customer acquisition and retention rates',
+      ],
+    },
+    {
+      company: 'Fauget Studio',
+      years: '2025 - 2029',
+      position: 'Marketing Manager & Specialist',
+      duties: [
+        'Conductec market research to identify emerging trends and consumer preferences, providing valuable insights for produt development and positioning.',
+        'Oversaw the creation of engaging content for various platforms, collaborating with internal teams and external agencies to ensure brand consistency and relevance.',
+      ],
+    },
+  ]);
+
   return (
-    <div>
+    <div className='p-2'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Work Experience
       </h2>
+      {jobs.map((job, index) => {
+        const { company, years, position, duties } = job;
+
+        function updateCompany(newValue) {
+          const newJobs = [...jobs];
+          newJobs[index] = { ...newJobs[index], company: newValue };
+          setJobs(newJobs);
+        }
+
+        return (
+          <div key={index} className='mb-4'>
+            <SingleLineEdit
+              name='Company'
+              value={company}
+              setValue={updateCompany}
+              className={'font-bold'}
+            />
+            <SingleLineEdit
+              name='Years'
+              value={years}
+              className={'text-xs font-medium'}
+            />
+            <SingleLineEdit
+              name='Position'
+              value={position}
+              className={'text-sm tracking-wide'}
+            />
+            {duties.map((duty, index) => {
+              return (
+                <div key={index} className='flex items-baseline'>
+                  <span className='before:content-["•"]'></span>
+                  <MultiLineEdit
+                    name='Duty'
+                    value={duty}
+                    className={'ml-2 max-h-40 w-full resize-none text-sm'}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 }
