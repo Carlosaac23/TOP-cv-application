@@ -23,7 +23,7 @@ export default function SingleLineEdit(props) {
       value={editingValue}
       onChange={onChange}
       onBlur={handleBlur}
-      className={`${className} transition-all duration-150 hover:cursor-pointer hover:bg-neutral-200 hover:pl-0.5 focus:outline-none`}
+      className={`${className} block field-sizing-content transition-all duration-150 hover:cursor-pointer hover:bg-neutral-200 hover:pl-0.5 focus:outline-none`}
     />
   );
 }
