@@ -56,12 +56,15 @@ export default function Education() {
               setValue={updateUniversity}
               className={'text-sm font-bold'}
             />
-            <SingleLineEdit
-              name='Career'
-              value={career}
-              setValue={updateCareer}
-              className={'ml-2 text-sm font-light'}
-            />
+            <div className='flex items-baseline'>
+              <span className='before:content-["•"]'></span>
+              <SingleLineEdit
+                name='Career'
+                value={career}
+                setValue={updateCareer}
+                className={'ml-2 text-sm font-light'}
+              />
+            </div>
           </div>
         );
       })}
