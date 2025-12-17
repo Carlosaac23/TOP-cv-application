@@ -2,8 +2,8 @@ import { useState } from 'react';
 import SingleLineEdit from '../SingleLineEdit';
 
 export default function Name() {
-  const [name, setName] = useState('Carlos Acosta');
-  const [profession, setProfession] = useState('Software Engineer');
+  const [name, setName] = useState('John Doe');
+  const [profession, setProfession] = useState('Marketing Manager');
 
   return (
     <>
