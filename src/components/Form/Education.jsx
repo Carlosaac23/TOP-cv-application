@@ -43,18 +43,18 @@ export default function Education() {
         }
 
         return (
-          <div key={index} className='mb-4'>
+          <div key={index} className='not-last:mb-4'>
             <SingleLineEdit
               name='Year'
               value={year}
               setValue={updateYear}
-              className={'text-sm font-bold'}
+              className={'block text-sm font-bold'}
             />
             <SingleLineEdit
               name='University'
               value={university}
               setValue={updateUniversity}
-              className={'text-sm font-bold'}
+              className={'block text-sm font-bold'}
             />
             <div className='flex items-baseline'>
               <span className='before:content-["•"]'></span>
