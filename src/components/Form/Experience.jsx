@@ -49,22 +49,22 @@ export default function Experience() {
         }
 
         return (
-          <div key={index} className='mb-4'>
+          <div key={index} className='not-last:mb-4'>
             <SingleLineEdit
               name='Company'
               value={company}
               setValue={updateCompany}
-              className={'font-bold'}
+              className={'block font-bold'}
             />
             <SingleLineEdit
               name='Years'
               value={years}
-              className={'text-xs font-medium'}
+              className={'block text-xs font-medium'}
             />
             <SingleLineEdit
               name='Position'
               value={position}
-              className={'text-sm tracking-wide'}
+              className={'block text-sm tracking-wide'}
             />
             {duties.map((duty, index) => {
               return (
@@ -73,7 +73,7 @@ export default function Experience() {
                   <MultiLineEdit
                     name='Duty'
                     value={duty}
-                    className={'ml-2 max-h-40 w-full resize-none text-sm'}
+                    className={'ml-2 max-h-40 resize-none text-sm'}
                   />
                 </div>
               );
