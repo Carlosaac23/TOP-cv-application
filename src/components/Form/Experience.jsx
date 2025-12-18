@@ -18,7 +18,7 @@ export default function Experience() {
       years: '2025 - 2029',
       position: 'Marketing Manager & Specialist',
       duties: [
-        'Conductec market research to identify emerging trends and consumer preferences, providing valuable insights for produt development and positioning.',
+        'Conducted market research to identify emerging trends and consumer preferences, providing valuable insights for produt development and positioning.',
         'Oversaw the creation of engaging content for various platforms, collaborating with internal teams and external agencies to ensure brand consistency and relevance.',
       ],
     },
@@ -39,40 +39,66 @@ export default function Experience() {
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Work Experience
       </h2>
-      {jobs.map((job, index) => {
+      {jobs.map((job, jobIndex) => {
         const { company, years, position, duties } = job;
 
         function updateCompany(newValue) {
           const newJobs = [...jobs];
-          newJobs[index] = { ...newJobs[index], company: newValue };
+          newJobs[jobIndex] = { ...newJobs[jobIndex], company: newValue };
+          setJobs(newJobs);
+        }
+
+        function updateYears(newValue) {
+          const newJobs = [...jobs];
+          newJobs[jobIndex] = { ...newJobs[jobIndex], years: newValue };
+          setJobs(newJobs);
+        }
+
+        function updatePosition(newValue) {
+          const newJobs = [...jobs];
+          newJobs[jobIndex] = { ...newJobs[jobIndex], position: newValue };
           setJobs(newJobs);
         }
 
         return (
-          <div key={index} className='not-last:mb-4'>
+          <div key={jobIndex} className='not-last:mb-4'>
             <SingleLineEdit
               name='Company'
               value={company}
               setValue={updateCompany}
-              className={'block font-bold'}
+              className={'mb-0.5 block font-bold'}
             />
             <SingleLineEdit
               name='Years'
               value={years}
+              setValue={updateYears}
               className={'block text-xs font-medium'}
             />
             <SingleLineEdit
               name='Position'
               value={position}
-              className={'block text-sm tracking-wide'}
+              setValue={updatePosition}
+              className={'mb-1 block text-sm tracking-wide'}
             />
-            {duties.map((duty, index) => {
+            {duties.map((duty, dutyIndex) => {
+              function updateDuty(newValue) {
+                const newJobs = [...jobs];
+                const newDuties = [...duties];
+                newDuties[dutyIndex] = newValue;
+                newJobs[jobIndex] = {
+                  ...newJobs[jobIndex],
+                  duties: newDuties,
+                };
+                setJobs(newJobs);
+              }
+
               return (
-                <div key={index} className='flex items-baseline'>
+                <div key={dutyIndex} className='flex items-baseline'>
                   <span className='before:content-["•"]'></span>
                   <MultiLineEdit
                     name='Duty'
                     value={duty}
+                    setValue={updateDuty}
                     className={'ml-2 max-h-40 resize-none text-sm'}
                   />
                 </div>
