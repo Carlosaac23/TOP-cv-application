@@ -34,7 +34,7 @@ export default function MultiLineEdit(props) {
       value={editingValue}
       onChange={handleChange}
       onBlur={handleBlur}
-      className={`${className} block field-sizing-content transition-all duration-150 hover:cursor-pointer hover:bg-neutral-200 hover:pl-0.5 focus:outline-none`}
+      className={`${className} field-sizing-content transition-all duration-150 hover:cursor-pointer hover:bg-neutral-200 hover:pl-0.5 focus:outline-none`}
       rows={7}
     ></textarea>
   );
