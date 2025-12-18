@@ -6,23 +6,19 @@ export default function Name() {
   const [profession, setProfession] = useState('Marketing Manager');
 
   return (
-    <>
-      <div>
-        <SingleLineEdit
-          name='Name'
-          value={name}
-          setValue={setName}
-          className={'w-full text-center text-2xl tracking-widest uppercase'}
-        />
-      </div>
-      <div>
-        <SingleLineEdit
-          name='Profession'
-          value={profession}
-          setValue={setProfession}
-          className={'w-full text-center text-sm tracking-wide uppercase'}
-        />
-      </div>
-    </>
+    <div className='flex flex-col items-center gap-1 border-b py-8'>
+      <SingleLineEdit
+        name='Name'
+        value={name}
+        setValue={setName}
+        className={'text-3xl tracking-widest uppercase'}
+      />
+      <SingleLineEdit
+        name='Profession'
+        value={profession}
+        setValue={setProfession}
+        className={'text-sm tracking-wide uppercase'}
+      />
+    </div>
   );
 }
