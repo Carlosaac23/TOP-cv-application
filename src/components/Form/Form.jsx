@@ -1,6 +1,7 @@
 import Contact from './Contact';
 import Education from './Education';
 import Experience from './Experience';
+import Languages from './Languages';
 import Name from './Name';
 import Skills from './Skills';
 import Summary from './Summary';
@@ -14,6 +15,7 @@ export default function Form() {
       <Education />
       <Experience />
       <Skills />
+      <Languages />
     </main>
   );
 }
