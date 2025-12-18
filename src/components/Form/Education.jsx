@@ -16,7 +16,7 @@ export default function Education() {
   ]);
 
   return (
-    <div className='p-2'>
+    <div className='border-b px-2 py-4'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Education
       </h2>
