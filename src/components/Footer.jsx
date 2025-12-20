@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className='mt-auto bg-sky-100 p-3 text-center text-xs'>
+    <footer className='mt-auto bg-sky-100 p-3 text-center text-xs md:mt-10'>
       <p>
         &copy; {new Date().getFullYear()} Copyright by{' '}
         <a
