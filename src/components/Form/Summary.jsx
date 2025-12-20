@@ -8,7 +8,7 @@ export default function Summary() {
   const [summary, setSummary] = useState(sampleText);
 
   return (
-    <div className='border-b px-2 py-4'>
+    <div className='border-b px-2 py-4 md:px-4'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Profile Summary
       </h2>

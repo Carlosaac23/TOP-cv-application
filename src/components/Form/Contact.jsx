@@ -36,7 +36,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className='flex flex-col gap-1 border-b px-2 py-4'>
+    <div className='flex flex-col gap-1 border-b px-2 py-4 md:border-r'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Contact
       </h2>

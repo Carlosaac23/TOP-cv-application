@@ -35,7 +35,7 @@ export default function Experience() {
   ]);
 
   return (
-    <div className='border-b px-2 py-4'>
+    <div className='border-b px-2 py-4 md:row-span-4 md:px-4'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
         Work Experience
       </h2>
