@@ -8,7 +8,7 @@ import Summary from './Summary';
 
 export default function Form() {
   return (
-    <main className='m-2 border-t-2 md:grid md:grid-cols-2 lg:m-auto lg:max-w-[80%] xl:max-w-[50%]'>
+    <main className='m-2 border-t md:grid md:grid-cols-2 md:grid-rows-[auto_repeat(4,1fr)] md:border-x lg:m-auto lg:max-w-[80%] lg:shadow-md xl:max-w-[50%]'>
       <Name />
       <Contact />
       <Summary />

@@ -6,7 +6,7 @@ export default function Name() {
   const [profession, setProfession] = useState('Marketing Manager');
 
   return (
-    <div className='flex flex-col items-center gap-1 border-b px-2 py-6 md:col-span-2'>
+    <div className='flex flex-col items-center gap-1 border-b px-2 py-6 md:col-span-2 md:py-16'>
       <SingleLineEdit
         name='Name'
         value={name}

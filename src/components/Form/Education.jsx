@@ -16,8 +16,8 @@ export default function Education() {
   ]);
 
   return (
-    <div className='border-b px-2 py-4 md:border-r'>
-      <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
+    <div className='border-b px-2 py-4 md:border-r md:px-4'>
+      <h2 className='mb-2 text-center font-bold tracking-widest uppercase md:text-left md:text-xl'>
         Education
       </h2>
       {educations.map(({ year, university, career }, index) => {

@@ -36,7 +36,7 @@ export default function Experience() {
 
   return (
     <div className='border-b px-2 py-4 md:row-span-4 md:px-4'>
-      <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
+      <h2 className='mb-2 text-center font-bold tracking-widest uppercase md:text-left md:text-xl'>
         Work Experience
       </h2>
       {jobs.map((job, jobIndex) => {
@@ -62,18 +62,20 @@ export default function Experience() {
 
         return (
           <div key={jobIndex} className='not-last:mb-4'>
-            <SingleLineEdit
-              name='Company'
-              value={company}
-              setValue={updateCompany}
-              className={'mb-0.5 block font-bold'}
-            />
-            <SingleLineEdit
-              name='Years'
-              value={years}
-              setValue={updateYears}
-              className={'block text-xs font-medium'}
-            />
+            <div className='md:flex md:justify-between'>
+              <SingleLineEdit
+                name='Company'
+                value={company}
+                setValue={updateCompany}
+                className={'mb-0.5 block font-bold'}
+              />
+              <SingleLineEdit
+                name='Years'
+                value={years}
+                setValue={updateYears}
+                className={'block text-xs font-medium md:text-sm'}
+              />
+            </div>
             <SingleLineEdit
               name='Position'
               value={position}

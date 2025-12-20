@@ -9,7 +9,7 @@ export default function Summary() {
 
   return (
     <div className='border-b px-2 py-4 md:px-4'>
-      <h2 className='mb-2 text-center font-bold tracking-widest uppercase'>
+      <h2 className='mb-2 text-center font-bold tracking-widest uppercase md:text-left md:text-xl'>
         Profile Summary
       </h2>
       <MultiLineEdit
