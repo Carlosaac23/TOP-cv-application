@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import MultiLineEdit from '../MultiLineEdit';
-import SingleLineEdit from '../SingleLineEdit';
+
+import MultiLineEdit from '@/components/MultiLineEdit';
+import SingleLineEdit from '@/components/SingleLineEdit';
 
 export default function Experience() {
   const [jobs, setJobs] = useState([

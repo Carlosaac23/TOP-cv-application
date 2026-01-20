@@ -1,6 +1,7 @@
 import { Earth, Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
-import SingleLineEdit from '../SingleLineEdit';
+
+import SingleLineEdit from '@/components/SingleLineEdit';
 
 export default function Contact() {
   const [telephone, setTelephone] = useState('+57 300-184-1584');

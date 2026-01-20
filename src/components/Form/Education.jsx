@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import SingleLineEdit from '../SingleLineEdit';
+
+import SingleLineEdit from '@/components/SingleLineEdit';
 
 export default function Education() {
   const [educations, setEducations] = useState([
