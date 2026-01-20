@@ -1,6 +1,6 @@
-import Header from '@/components//Header';
 import Footer from '@/components/Footer';
 import Form from '@/components/Form/Form';
+import Header from '@/components/Header';
 
 export default function App() {
   return (
