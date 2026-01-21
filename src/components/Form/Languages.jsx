@@ -1,36 +1,23 @@
-import { useState } from 'react';
-
 import SingleLineEdit from '@/components/SingleLineEdit';
+import { useLanguages } from '@/hooks/useLanguages';
 
 export default function Languages() {
-  const [languages, setLanguages] = useState([
-    'English: Native',
-    'French: Fluent',
-    'German: Basics',
-    'Spanish: Intermadiate',
-  ]);
+  const { languages, updateLanguage } = useLanguages();
 
   return (
     <div className='border-b px-2 py-4 md:border-r md:px-4'>
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase md:text-left md:text-xl'>
-        Lenguajes
+        Languajes
       </h2>
-
       {languages.map((language, index) => {
-        function updateLanguage(newValue) {
-          const newLanguages = [...languages];
-          newLanguages[index] = newValue;
-          setLanguages(newLanguages);
-        }
-
         return (
           <div key={index} className='flex items-baseline gap-2'>
             <span className='before:content-["•"]'></span>
             <SingleLineEdit
               name='Language'
               value={language}
-              setValue={updateLanguage}
-              className={'text-sm'}
+              setValue={newValue => updateLanguage(index, newValue)}
+              className='text-sm'
             />
           </div>
         );
