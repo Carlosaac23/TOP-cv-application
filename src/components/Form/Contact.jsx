@@ -9,9 +9,7 @@ export default function Contact() {
       <h2 className='mb-2 text-center font-bold tracking-widest uppercase md:text-left md:text-xl'>
         Contact
       </h2>
-      {contactMethods.map((props, index) => {
-        const { name, icon, value, setValue } = props;
-
+      {contactMethods.map(({ name, icon, value, setValue }, index) => {
         return (
           <div key={index} className='flex items-center gap-3'>
             {icon}
@@ -19,7 +17,7 @@ export default function Contact() {
               name={name}
               value={value}
               setValue={setValue}
-              className={'text-sm'}
+              className='text-sm'
             />
           </div>
         );
