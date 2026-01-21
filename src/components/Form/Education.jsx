@@ -1,19 +1,9 @@
-import { useState } from 'react';
-import SingleLineEdit from '../SingleLineEdit';
+import SingleLineEdit from '@/components/SingleLineEdit';
+import { useEducation } from '@/hooks/useEducation';
 
 export default function Education() {
-  const [educations, setEducations] = useState([
-    {
-      year: '2029 - 2030',
-      university: 'Borcelle University',
-      career: 'Master of Business Management',
-    },
-    {
-      year: '2025 - 2029',
-      university: 'Borcelle University',
-      career: 'Bachelor of Business Management',
-    },
-  ]);
+  const { educations, updateYear, updateUniversity, updateCareer } =
+    useEducation();
 
   return (
     <div className='border-b px-2 py-4 md:border-r md:px-4'>
@@ -21,48 +11,27 @@ export default function Education() {
         Education
       </h2>
       {educations.map(({ year, university, career }, index) => {
-        function updateYear(newValue) {
-          const newEducations = [...educations];
-          newEducations[index] = { ...newEducations[index], year: newValue };
-          setEducations(newEducations);
-        }
-
-        function updateUniversity(newValue) {
-          const newEducations = [...educations];
-          newEducations[index] = {
-            ...newEducations[index],
-            university: newValue,
-          };
-          setEducations(newEducations);
-        }
-
-        function updateCareer(newValue) {
-          const newEducations = [...educations];
-          newEducations[index] = { ...newEducations[index], career: newValue };
-          setEducations(newEducations);
-        }
-
         return (
           <div key={index} className='not-last:mb-4'>
             <SingleLineEdit
               name='Year'
               value={year}
-              setValue={updateYear}
-              className={'block text-sm font-bold'}
+              setValue={newValue => updateYear(index, newValue)}
+              className='block text-sm font-bold'
             />
             <SingleLineEdit
               name='University'
               value={university}
-              setValue={updateUniversity}
-              className={'block text-sm font-bold'}
+              setValue={newValue => updateUniversity(index, newValue)}
+              className='block text-sm font-bold'
             />
             <div className='flex items-baseline'>
               <span className='before:content-["•"]'></span>
               <SingleLineEdit
                 name='Career'
                 value={career}
-                setValue={updateCareer}
-                className={'ml-2 text-sm font-light'}
+                setValue={newValue => updateCareer(index, newValue)}
+                className='ml-2 text-sm font-light'
               />
             </div>
           </div>

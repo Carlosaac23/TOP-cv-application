@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-export default function MultiLineEdit(props) {
-  const { name, value, setValue, className } = props;
+export default function MultiLineEdit({ name, value, setValue, className }) {
   const [editingValue, setEditingValue] = useState(value);
   const minLength = 40;
 
-  function handleChange(e) {
+  const handleChange = e => {
     setEditingValue(e.target.value);
-  }
+  };
 
-  function handleBlur() {
+  const handleBlur = () => {
     if (editingValue.length === 0) {
       toast.error(`${name} should not be empty.`);
       return;
@@ -26,7 +25,7 @@ export default function MultiLineEdit(props) {
       setValue(editingValue);
       return;
     }
-  }
+  };
 
   return (
     <textarea

@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-export default function SingleLineEdit(props) {
-  const { name, value, setValue, className } = props;
+export default function SingleLineEdit({ name, value, setValue, className }) {
   const [editingValue, setEditingValue] = useState(value);
 
-  function onChange(e) {
+  const onChange = e => {
     setEditingValue(e.target.value);
-  }
+  };
 
-  function handleBlur() {
+  const handleBlur = () => {
+    if (editingValue.length === 0) {
+      toast.error(`${name} should not be empty.`);
+      return;
+    }
+
     if (value !== editingValue) {
       setValue(editingValue);
       toast.success(`${name} successfully saved!`);
     }
-  }
+  };
 
   return (
     <input

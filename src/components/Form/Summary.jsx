@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import MultiLineEdit from '../MultiLineEdit';
 
-const sampleText =
-  'Experienced and results-driven Marketing Manager with a proven track record in developing and executing successful marketing strategies. I am seeking a challenging role where I can contribute my skills in strategic planning, team leadership, and creative problem-solving to achieve business objectives.';
+import MultiLineEdit from '@/components/MultiLineEdit';
 
 export default function Summary() {
-  const [summary, setSummary] = useState(sampleText);
+  const [summary, setSummary] = useState(
+    'Experienced and results-driven Marketing Manager with a proven track record in developing and executing successful marketing strategies. I am seeking a challenging role where I can contribute my skills in strategic planning, team leadership, and creative problem-solving to achieve business objectives.'
+  );
 
   return (
     <div className='border-b px-2 py-4 md:px-4'>
@@ -16,7 +16,7 @@ export default function Summary() {
         name='Summary'
         value={summary}
         setValue={setSummary}
-        className={'max-h-40 resize-none text-sm'}
+        className='max-h-40 resize-none text-sm'
       />
     </div>
   );
