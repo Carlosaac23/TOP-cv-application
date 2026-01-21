@@ -3,7 +3,6 @@ import { toast } from 'sonner';
 
 export default function SingleLineEdit({ name, value, setValue, className }) {
   const [editingValue, setEditingValue] = useState(value);
-  const minLength = 40;
 
   const onChange = e => {
     setEditingValue(e.target.value);
@@ -12,11 +11,6 @@ export default function SingleLineEdit({ name, value, setValue, className }) {
   const handleBlur = () => {
     if (editingValue.length === 0) {
       toast.error(`${name} should not be empty.`);
-      return;
-    }
-
-    if (editingValue.length < minLength) {
-      toast.warning(`${name} should be at least ${minLength} characters.`);
       return;
     }
 
